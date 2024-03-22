@@ -1,0 +1,52 @@
+body{
+    font-family: poppins;
+}
+
+
+.prime-text{
+    font-family: Outfit;
+}
+.prime-content{
+    font-family: poppins;
+}
+
+.splide{
+    height:790px;
+}
+   .splide__arrow svg {
+    fill: #f7f6f6!important;
+  }
+  .splide__arrow {
+top: 50%!important;
+}
+
+     .navbar {
+        background-color: transparent;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        transition: background-color 0.3s ease-in-out;
+        text-align: center;
+        /* padding: 20px 0; */
+    }
+    
+    .navbar.scrolled {
+        background-color: #000000; /* Change to your desired background color */
+        /* color:#000000; */
+    }
+    
+    /* show/hide less */
+    .hidden {
+        display: none;
+      }
+  
+      .show-more {
+        cursor: pointer;
+        color: #CA1C99;
+      }
+    
+      .show-more:hover {
+color: #b91189;
+      }
+    
+    

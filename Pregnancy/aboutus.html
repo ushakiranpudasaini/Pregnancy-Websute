@@ -1,0 +1,448 @@
+<html class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      }
+                   
+                   
+                },
+                fontFamily: {
+                    poppins: ['Poppins', 'sans-serif'],
+                 
+                    Outfit: ['Outfit', 'serif']
+                },
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" class="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Mulish&family=Poppins:wght@500&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>
+      Document
+    </title>
+ 
+</head>
+<body>
+    <section class=" navbar  fixed top-0 w-full  bg-white border-b border-gray-200 z-40 lg:py-0 py-4 transition-all" id="trans-nav">
+        <div class="max-w-6xl mx-auto py-3">
+            <div class="bg-[url('unsplash.jpg')] bg-cover" x-data="{ openMenu : false }"
+                :class="openMenu ? 'overflow-hidden' : 'overflow-visible' ">
+                <style>
+                    [x-cloak] {
+                        display: none !important;
+                    }
+                </style>
+                <header class="items-center justify-between px-4  lg:flex drop-shadow-sm">
+                    <div class="flex justify-between">
+                        <a href="home1.html" class="mr-4 text-gray-700">
+                            Hajardin
+                        </a>
+                        <button class="flex flex-col items-center align-middle lg:hidden " @click="openMenu = !openMenu"
+                            :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Navigation Menu"
+                            aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="hidden lg:w-auto py-3 lg:space-x-12 lg:items-center lg:flex ">
+                        <li><a href="index.html" class="text-base text-gray-700  font-medium ">
+                           Home
+                        </a>
+                    </li>
+                        <li><a href="aboutus.html" class="text-base text-gray-700  font-medium ">
+                                About us
+                            </a>
+                        </li>
+                        <li><a href="pregweek.html" class="text-base text-gray-700  font-medium ">
+                         Pregnancy
+                        </a>
+                    </li>
+                    <li><a href="healthcenter.html" class="text-base text-gray-700  font-medium ">
+                        Health Center
+                      </a>
+                  </li>
+                    <li><a href="babynames.html" class="text-base text-gray-700  font-medium ">
+                        Baby Names
+                      </a>
+                  </li>                     
+                    </ul>                  
+                </header>
+                <nav id="mobile-navigation"
+                    class="fixed top-0 bottom-0 left-0 right-0 z-40 text-gray-100 bg-[#00000063]"
+                    :class="openMenu ? 'visible' : 'invisible' " x-cloak>
+                    <!-- UL Links -->
+                    <ul class="absolute top-0 bottom-0 left-0 right-0 z-10 py-8 transition-all bg-white w-96 drop-shadow-2xl"
+                        :class="closemenu ? 'translate-x-0' : 'translate-x-full'">
+                        <li x-data="{ open: false }"
+                            class="text-gray-700 border-b  relative hover:bg-gray-100   border-inherit">
+                            <a href="javascript:void(0)" @click="open = ! open"
+                                class="flex items-center  p-4 text-gray-700 group   hover:text-[#CA1C99]">
+                                <span> Home </span>
+                                <span class="inline-block ml-auto  absolute right-0  left-[19rem] sidenav-arrow">
+                                    <svg class="w-3 h-3 group-" viewBox="0 0 10 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" data-config-id="auto-svg-3-1">
+                                        <path
+                                            d="M9.08329 0.666626C8.74996 0.333293 8.24996 0.333293 7.91663 0.666626L4.99996 3.58329L2.08329 0.666626C1.74996 0.333293 1.24996 0.333293 0.916626 0.666626C0.583293 0.999959 0.583293 1.49996 0.916626 1.83329L4.41663 5.33329C4.58329 5.49996 4.74996 5.58329 4.99996 5.58329C5.24996 5.58329 5.41663 5.49996 5.58329 5.33329L9.08329 1.83329C9.41663 1.49996 9.41663 0.999959 9.08329 0.666626Z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="transition  border-gray-500 dropdown-section nested-menu"
+                                x-show="open">
+                                <ul
+                                    class="text-sm pl-3 ml-3 font-medium divide-y divide-gray-300  divide-dashed">
+                                    <li class=" group flex ">
+                                        <a href="home1.html"
+                                            class="flex  py-2  group-hover:text-blue-600   items-center mr-4 no-underline  ">
+                                            <span
+                                                class="ml-2 text-sm text-gray-500  group-hover:text-blue-600    ">
+                                                Homepage 1
+                                            </span></a>
+                                    </li>
+                                    <li class=" group flex ">
+                                        <a href="home2.html"
+                                            class="flex  py-2  group-hover:text-blue-600   items-center mr-4 no-underline  ">
+                                            <span
+                                                class="ml-2 text-sm text-gray-500  group-hover:text-blue-600    ">
+                                                Homepage 2
+                                            </span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="text-gray-700 border-b hover:bg-gray-100 text-left border-inherit">
+                            <a href="about.html" class="block p-4">About us</a>
+                        </li>
+                        <li x-data="{ open: false }"
+                            class="text-gray-700 border-b  relative hover:bg-gray-100   border-inherit">
+                            <a href="javascript:void(0)" @click="open = ! open"
+                                class="flex items-center  p-4 text-gray-700 group   hover:text-[#CA1C99]">
+                                <span> Services </span>
+                                <span class="inline-block ml-auto  absolute right-0  left-[19rem] sidenav-arrow">
+                                    <svg class="w-3 h-3 group-" viewBox="0 0 10 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" data-config-id="auto-svg-3-1">
+                                        <path
+                                            d="M9.08329 0.666626C8.74996 0.333293 8.24996 0.333293 7.91663 0.666626L4.99996 3.58329L2.08329 0.666626C1.74996 0.333293 1.24996 0.333293 0.916626 0.666626C0.583293 0.999959 0.583293 1.49996 0.916626 1.83329L4.41663 5.33329C4.58329 5.49996 4.74996 5.58329 4.99996 5.58329C5.24996 5.58329 5.41663 5.49996 5.58329 5.33329L9.08329 1.83329C9.41663 1.49996 9.41663 0.999959 9.08329 0.666626Z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="transition  border-gray-500 dropdown-section nested-menu"
+                                x-show="open">
+                                <ul
+                                    class="text-sm pl-3 ml-3 font-medium divide-y divide-gray-300  divide-dashed">
+                                    <li class=" group flex ">
+                                        <a href="services.html"
+                                            class="flex  py-2  group-hover:text-blue-600   items-center mr-4 no-underline  ">
+                                            <span
+                                                class="ml-2 text-sm text-gray-500  group-hover:text-blue-600    ">
+                                                Service Grid
+                                            </span></a>
+                                    </li>
+                                    <li class=" group flex ">
+                                        <a href="servicedetails.html"
+                                            class="flex  py-2  group-hover:text-blue-600   items-center mr-4 no-underline  ">
+                                            <span
+                                                class="ml-2 text-sm text-gray-500  group-hover:text-blue-600    ">
+                                                Service Details
+                                            </span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li x-data="{ open: false }"
+                            class="text-gray-700 border-b  relative hover:bg-gray-100   border-inherit">
+                            <a href="javascript:void(0)" @click="open = ! open"
+                                class="flex items-center  p-4 text-gray-700 group   hover:text-[#CA1C99]">
+                                <span> Blog </span>
+                                <span class="inline-block ml-auto  absolute right-0  left-[19rem] sidenav-arrow">
+                                    <svg class="w-3 h-3 group-" viewBox="0 0 10 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" data-config-id="auto-svg-3-1">
+                                        <path
+                                            d="M9.08329 0.666626C8.74996 0.333293 8.24996 0.333293 7.91663 0.666626L4.99996 3.58329L2.08329 0.666626C1.74996 0.333293 1.24996 0.333293 0.916626 0.666626C0.583293 0.999959 0.583293 1.49996 0.916626 1.83329L4.41663 5.33329C4.58329 5.49996 4.74996 5.58329 4.99996 5.58329C5.24996 5.58329 5.41663 5.49996 5.58329 5.33329L9.08329 1.83329C9.41663 1.49996 9.41663 0.999959 9.08329 0.666626Z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="transition  border-gray-500 dropdown-section nested-menu"
+                                x-show="open">
+                                <ul
+                                    class="text-sm pl-3 ml-3 font-medium divide-y divide-gray-300  divide-dashed">
+                                    <li class=" group flex ">
+                                        <a href="blog.html"
+                                            class="flex  py-2  group-hover:text-blue-600   items-center mr-4 no-underline  ">
+                                            <span
+                                                class="ml-2 text-sm text-gray-500  group-hover:text-blue-600    ">
+                                                Blog Grid
+                                            </span></a>
+                                    </li>
+                                    <li class=" group flex ">
+                                        <a href="singlepage.html"
+                                            class="flex  py-2  group-hover:text-blue-600   items-center mr-4 no-underline  ">
+                                            <span
+                                                class="ml-2 text-sm text-gray-500  group-hover:text-blue-600    ">
+                                                Blog Details
+                                            </span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="text-gray-700 border-b text-left hover:bg-gray-100 border-inherit">
+                            <a href="contact.html" class="block p-4">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Close Button -->
+                    <button class="absolute top-0 bottom-0 right-0 z-10 left-80" @click="openMenu = !openMenu"
+                        :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Close Navigation Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="absolute w-6 h-6 text-gray-700 hover:text-blue-600 top-2 left-2" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <div class="bg-pink-50">
+    <div class="pt-24 pb-6 max-w-6xl mx-auto flex " aria-label="Breadcrumb">
+        <ol class="inline-flex flex-wrap items-center  space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+                <a href="index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#CA1C99] ">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                        </path>
+                    </svg>
+                    Home
+                </a>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="ml-1 text-sm font-medium text-gray-700 md:ml-2 ">About Us
+                    </span>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+    <section class="mt-20">
+        <div class="max-w-6xl px-4 mx-auto">
+        <div class="block justify-center text-center  max-w-4xl mx-auto mb-16">
+            <span class="text-[#CA1C99] text-4xl tracking wider font-medium">About Us</span>
+            <h2 class="text-2xl font-semibold prime-text mt-6  mb-6">Our mission is to support you through all the stages of pregnancy and parenthood.</h2>
+            <p class="mb-8 text-gray-600"> Welcome to Verywell Family, an award-winning resource for reliable, compassionate, and up-to-date information on the pregnancy and parenting topics that matter most to you.
+
+                We are dedicated to empowering you with the best answers to your most pressing questions when it comes to fertility and planning for pregnancy, caring for a newborn, and navigating the complex stages of parenting.
+                
+                For more than 20 years, we’ve worked hard to create and refine our curated library of comprehensive and trustworthy information. Our team of writers and editors are industry experts, including healthcare professionals and credible journalists, who write and continually update our 5,500+ article library. 
+                
+                The Verywell Family Review Board includes board-certified physicians and family health experts who vet our articles. They join us on our mission to be a reliable resource for pregnancy and parenting advice.</p>  
+        </div>
+    </div>
+    </section>
+    <section class="bg-[#FAF1F7] ">
+        <div class="flex flex-wrap items-center">
+            <div class="lg:w-1/2 w-full ">
+                <img src="assets/images/shoes.jpg" alt="image" class="w-full h-[26rem] lg:h-[41rem] object-cover">
+                            </div>
+            <div class="lg:w-1/2 w-full px-4">
+                <div class="max-w-2xl px-10 lg:py-0 py-10 mx-auto">
+                <span class="text-[#CA1C99] text-sm tracking wider font-medium">Who We Are?</span>
+<h2 class="text-2xl text-gray-700 mt-4 mb-6 font-semibold prime-text">Over the years, we've built a rich legacy of supporting expectant mothers and their partners!</h2>
+<p class="mb-8 text-gray-600"> Our mission is to provide support, guidance, and resources to empower you to navigate the beautiful and complex path of pregnancy with confidence.</p>  
+<p class="mb-8 text-gray-600">  Our mission is to provide support, guidance, and resources to empower you to navigate the beautiful and complex path of pregnancy with confidence.</p>                      
+<a href="#" class="border border-[#CA1C99] inline-flex items-center justify-center rounded-md py-3 px-5 text-center text-base font-normal text-[#CA1C99] ">
+  More AboutUs
+       </a>
+    </div>
+</div>       
+        </div>
+</section>
+<section class="py-20">
+    <div class="max-w-6xl px-4 mx-auto">
+    <div class="block justify-center text-center  max-w-4xl mx-auto mb-16">    
+        <h2 class="text-2xl font-semibold mt-6 prime-text mb-6">We keep You Healthy With</h2>
+        <p class="mb-8 text-gray-600"> Welcome to Verywell Family, an award-winning resource for reliable, compassionate, and up-to-date information on the pregnancy and parenting topics that matter most to you.
+    </div>
+    <div class="flex flex-wrap items-center">
+        <a href="#" class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3 ">
+            <div class="h-full p-6 text-center border border-gray-200 dark:border-gray-600 rounded-md ">
+                <div class="inline-flex items-center justify-center w-16 h-16 mx-auto mb-4 text-blue-500 rounded-lg  dark:text-gray-400 ">
+                    <svg width="64" height="60" viewBox="0 0 64 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.6">
+                        <path d="M57.8658 6.7207H4.21736C4.02711 6.7207 3.84464 6.79268 3.71011 6.92081C3.57558 7.04893 3.5 7.22271 3.5 7.40391V45.0469C3.50033 45.2279 3.57605 45.4013 3.71055 45.5292C3.84504 45.6571 4.02732 45.7289 4.21736 45.7289H24.0107V51.9141H19.2057C19.0154 51.9141 18.833 51.986 18.6984 52.1142C18.5639 52.2423 18.4883 52.4161 18.4883 52.5973C18.4883 52.7785 18.5639 52.9522 18.6984 53.0804C18.833 53.2085 19.0154 53.2805 19.2057 53.2805H42.8775C43.0677 53.2805 43.2502 53.2085 43.3847 53.0804C43.5192 52.9522 43.5948 52.7785 43.5948 52.5973C43.5948 52.4161 43.5192 52.2423 43.3847 52.1142C43.2502 51.986 43.0677 51.9141 42.8775 51.9141H38.0713V45.7289H57.8658C58.0558 45.7289 58.2381 45.6571 58.3726 45.5292C58.5071 45.4013 58.5828 45.2279 58.5832 45.0469V7.40391C58.5832 7.22271 58.5076 7.04893 58.3731 6.92081C58.2385 6.79268 58.0561 6.7207 57.8658 6.7207ZM36.6365 51.9141H25.4393V45.7289H36.6365V51.9141ZM57.1435 44.3648H4.93965V8.08594H57.1435V44.3648Z" fill="black"/>
+                        <path d="M8.21613 42.0867H54.2061C54.3962 42.0864 54.5783 42.0143 54.7126 41.8862C54.8469 41.7581 54.9223 41.5845 54.9223 41.4035V11.0449C54.9219 10.8642 54.8464 10.6909 54.7122 10.563C54.5779 10.4352 54.396 10.3632 54.2061 10.3629H8.21613C8.0263 10.3632 7.84434 10.4352 7.71011 10.563C7.57588 10.6909 7.50033 10.8642 7.5 11.0449V41.4035C7.5 41.5845 7.57541 41.7581 7.70968 41.8862C7.84394 42.0143 8.02609 42.0864 8.21613 42.0867ZM8.93965 11.7281H53.4949V40.7203H8.93965V11.7281Z" fill="black"/>
+                        <path d="M28.2174 15.668H34.8853C35.0755 15.668 35.258 15.596 35.3925 15.4679C35.5271 15.3397 35.6026 15.166 35.6026 14.9848C35.6026 14.8036 35.5271 14.6298 35.3925 14.5017C35.258 14.3736 35.0755 14.3016 34.8853 14.3016H28.2174C28.0271 14.3016 27.8446 14.3736 27.7101 14.5017C27.5756 14.6298 27.5 14.8036 27.5 14.9848C27.5 15.166 27.5756 15.3397 27.7101 15.4679C27.8446 15.596 28.0271 15.668 28.2174 15.668Z" fill="black"/>
+                        <path d="M33.5222 17.243H30.1877C30.0027 17.2503 29.8279 17.3254 29.6997 17.4526C29.5716 17.5798 29.5 17.7493 29.5 17.9256C29.5 18.1019 29.5716 18.2714 29.6997 18.3986C29.8279 18.5258 30.0027 18.6009 30.1877 18.6082H33.5222C33.7072 18.6009 33.882 18.5258 34.0102 18.3986C34.1383 18.2714 34.2099 18.1019 34.2099 17.9256C34.2099 17.7493 34.1383 17.5798 34.0102 17.4526C33.882 17.3254 33.7072 17.2503 33.5222 17.243Z" fill="black"/>
+                        <path d="M32.4322 20.093H30.2174C30.0271 20.093 29.8446 20.1649 29.7101 20.2931C29.5756 20.4212 29.5 20.595 29.5 20.7762C29.5 20.9574 29.5756 21.1311 29.7101 21.2593C29.8446 21.3874 30.0271 21.4594 30.2174 21.4594H32.4322C32.5264 21.4594 32.6197 21.4417 32.7067 21.4074C32.7938 21.373 32.8728 21.3227 32.9395 21.2593C33.0061 21.1958 33.0589 21.1205 33.095 21.0376C33.131 20.9547 33.1496 20.8659 33.1496 20.7762C33.1496 20.6864 33.131 20.5976 33.095 20.5147C33.0589 20.4318 33.0061 20.3565 32.9395 20.2931C32.8728 20.2296 32.7938 20.1793 32.7067 20.145C32.6197 20.1106 32.5264 20.093 32.4322 20.093Z" fill="black"/>
+                        <path d="M29.5 17.9297C29.5003 18.1107 29.576 18.2842 29.7105 18.412C29.845 18.5399 30.0273 18.6117 30.2174 18.6117H33.5507C33.6473 18.6155 33.7438 18.6007 33.8342 18.5681C33.9247 18.5355 34.0073 18.4859 34.077 18.4221C34.1468 18.3583 34.2024 18.2818 34.2403 18.1971C34.2782 18.1124 34.2978 18.0212 34.2978 17.9291C34.2978 17.837 34.2782 17.7459 34.2403 17.6611C34.2024 17.5764 34.1468 17.4999 34.077 17.4361C34.0073 17.3724 33.9247 17.3227 33.8342 17.2901C33.7438 17.2575 33.6473 17.2427 33.5507 17.2465H30.2174C30.0271 17.2465 29.8446 17.3185 29.7101 17.4466C29.5756 17.5747 29.5 17.7485 29.5 17.9297Z" fill="black"/>
+                        <path d="M38.3586 19.4086C37.5452 19.409 36.7455 19.6084 36.0363 19.9876C35.327 20.3668 34.7319 20.9131 34.3079 21.5742C34.2992 21.0346 34.0823 20.5168 33.6986 20.1197C33.3148 19.7226 32.791 19.4739 32.227 19.421C31.6631 19.3682 31.0984 19.5148 30.6407 19.833C30.183 20.1513 29.8643 20.6188 29.7453 21.1465L29.2125 23.5219C29.0778 24.1219 29.1734 24.748 29.482 25.2867L30.8035 27.6937L30.3224 28.1308L28.9603 27.0094C28.6297 26.6994 28.2367 26.4566 27.8048 26.2954C27.3729 26.1343 26.9112 26.0582 26.4476 26.0719L22.867 26.1586C22.2344 26.1722 21.6324 26.421 21.1901 26.852C20.7477 27.2829 20.5 27.8616 20.5 28.4642C20.5 29.0669 20.7477 29.6456 21.1901 30.0765C21.6324 30.5074 22.2344 30.7563 22.867 30.7699L25.6675 30.8367L27.1638 33.2484C27.4833 33.7683 27.9255 34.2103 28.4554 34.5394C28.9852 34.8684 29.5882 35.0756 30.2166 35.1445C30.3799 35.1628 30.5443 35.1718 30.7088 35.1715C31.2581 35.172 31.8019 35.0666 32.3074 34.8616C32.8128 34.6566 33.2694 34.3562 33.6496 33.9785L39.3626 28.3465C40.5065 28.1096 41.5181 27.4785 42.2029 26.5743C42.8877 25.6701 43.1973 24.5567 43.0723 23.4482C42.9473 22.3397 42.3964 21.3144 41.5256 20.5693C40.6548 19.8243 39.5255 19.4121 38.3549 19.4121L38.3586 19.4086ZM32.6234 33.0246C32.338 33.3067 31.9881 33.5222 31.6009 33.6543C31.2137 33.7864 30.7997 33.8315 30.3912 33.7861C29.9826 33.7407 29.5907 33.6061 29.2458 33.3927C28.9009 33.1793 28.6124 32.8929 28.4029 32.5558L26.706 29.8125C26.6442 29.7127 26.5568 29.6295 26.452 29.5707C26.3472 29.5118 26.2284 29.4793 26.1068 29.4761L22.9076 29.4C22.6511 29.3927 22.4076 29.2909 22.2283 29.116C22.0491 28.9412 21.9481 28.7069 21.9466 28.4625C21.9465 28.2176 22.047 27.9825 22.2266 27.8073C22.4062 27.6321 22.6506 27.5308 22.9076 27.525L26.4882 27.4383C27.0432 27.3984 27.5711 27.6258 27.9931 28.016L29.8794 29.5722C30.0137 29.684 30.1871 29.7439 30.3655 29.74C30.5438 29.7361 30.7141 29.6687 30.8429 29.5511L32.1878 28.3312C32.3006 28.229 32.3753 28.0945 32.4006 27.9481C32.4259 27.8018 32.4004 27.6516 32.3281 27.5203L30.7481 24.6445C30.6032 24.3895 30.5595 24.0933 30.6251 23.8101L31.1566 21.4336C31.1987 21.2229 31.3267 21.0368 31.5126 20.9157C31.6984 20.7947 31.927 20.7488 32.1484 20.7879C32.2626 20.806 32.3718 20.8455 32.4699 20.9041C32.5679 20.9627 32.6528 21.0392 32.7196 21.1292C32.7864 21.2192 32.8338 21.3209 32.8591 21.4285C32.8844 21.536 32.8871 21.6473 32.867 21.7558L32.4769 23.8289C32.4586 23.9256 32.4625 24.0249 32.4884 24.12C32.5144 24.2151 32.5617 24.3037 32.6271 24.3797L34.6044 26.7023C34.6299 26.7322 34.6583 26.7597 34.6893 26.7844C35.3715 27.5824 36.319 28.1351 37.3754 28.3511L32.6234 33.0246ZM38.3586 27.082C37.7033 27.0825 37.0627 26.8978 36.5176 26.5515C35.9726 26.2051 35.5476 25.7126 35.2965 25.1362C35.0455 24.5598 34.9795 23.9254 35.107 23.3133C35.2346 22.7012 35.5499 22.1389 36.013 21.6974C36.4762 21.256 37.0664 20.9553 37.709 20.8334C38.3516 20.7115 39.0177 20.7738 39.6232 21.0125C40.2286 21.2512 40.746 21.6556 41.1101 22.1744C41.4742 22.6933 41.6685 23.3033 41.6685 23.9273C41.6679 24.7634 41.319 25.5651 40.6985 26.1565C40.078 26.7479 39.2365 27.0808 38.3586 27.082Z" fill="black"/>
+                        <path d="M41.7809 15.6141C40.827 14.7049 39.6943 13.9837 38.4476 13.4917C37.2009 12.9996 35.8646 12.7463 34.515 12.7463C33.1655 12.7463 31.8292 12.9996 30.5824 13.4917C29.3357 13.9837 28.203 14.7049 27.2491 15.6141L20.5086 22.0313C18.5822 23.8669 17.5 26.3559 17.5 28.9512C17.5 31.5465 18.5822 34.0355 20.5086 35.8711L20.9282 36.2696C22.8552 38.1048 25.4689 39.1358 28.1941 39.1358C30.9193 39.1358 33.533 38.1048 35.46 36.2696L42.2018 29.8477C44.1284 28.0124 45.2107 25.5235 45.2107 22.9283C45.2107 20.3332 44.1284 17.8442 42.2018 16.009L41.7809 15.6141ZM41.1842 28.8844L34.4412 35.3063C33.6207 36.0883 32.6465 36.7086 31.5741 37.1319C30.5018 37.5552 29.3524 37.773 28.1916 37.773C27.0309 37.773 25.8815 37.5552 24.8091 37.1319C23.7368 36.7086 22.7626 36.0883 21.9421 35.3063L21.52 34.9067C20.699 34.125 20.0477 33.1969 19.6033 32.1755C19.159 31.154 18.9303 30.0592 18.9303 28.9535C18.9303 27.8479 19.159 26.7531 19.6033 25.7316C20.0477 24.7102 20.699 23.7821 21.52 23.0004L28.2642 16.5797C29.0847 15.7977 30.0589 15.1773 31.1313 14.7541C32.2036 14.3308 33.353 14.113 34.5138 14.113C35.6746 14.113 36.824 14.3308 37.8963 14.7541C38.9686 15.1773 39.9429 15.7977 40.7633 16.5797L41.1854 16.9793C42.0065 17.7608 42.6579 18.6888 43.1024 19.7101C43.5468 20.7315 43.7756 21.8263 43.7756 22.9319C43.7756 24.0375 43.5468 25.1322 43.1024 26.1536C42.6579 27.1749 42.0065 28.1029 41.1854 28.8844H41.1842Z" fill="black"/>
+                        </g>
+                        </svg>
+                        
+                </div>
+                <h2 class="mb-4 text-2xl font-bold leading-tight dark:text-gray-300 prime-text ">
+                   Testing & Ultrasound</h2>
+                <p class="text-sm font-medium text-gray-500  dark:text-gray-400 ">
+                    Ultrasound, a non-invasive imaging technique, is commonly used to visualise internal organs .</p>
+            </div>
+        </a>
+        <a href="#" class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3 ">
+            <div class="h-full p-6 text-center border border-gray-200 dark:border-gray-600 rounded-md ">
+                <div class="inline-flex items-center justify-center w-16 h-16 mx-auto mb-4 text-blue-500 rounded-lg  dark:text-gray-400 ">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30.0625 11.875C32.8239 11.875 35.0625 9.63642 35.0625 6.875C35.0625 4.11358 32.8239 1.875 30.0625 1.875C27.3011 1.875 25.0625 4.11358 25.0625 6.875C25.0625 9.63642 27.3011 11.875 30.0625 11.875Z" fill="black"/>
+                        <path d="M43.6875 32.375L39.1875 16.875C39.0625 16.25 38.6875 15.75 38.1875 15.5C36.6875 14.5 34.9375 13.875 32.9375 13.375C31.9375 13.25 31.0625 13.125 30.0625 13.125C29.0625 13.125 28.1875 13.25 27.1875 13.375C25.1875 13.75 23.4375 14.5 21.9375 15.5C21.4375 15.875 21.0625 16.25 20.9375 16.875L16.3125 32.375C15.9375 33.75 16.6875 35.125 18.0625 35.5C18.3125 35.625 18.5625 35.625 18.8125 35.625C19.9375 35.625 20.9375 34.875 21.1875 33.875L25.0625 20.75V25.125L20.4375 40.625H23.8125V58.125H28.8125V40.625H31.3125V58.125H36.3125V40.625H39.6875L35.0625 25.125V20.75L38.9375 33.875C39.3125 35 40.3125 35.625 41.3125 35.625C41.5625 35.625 41.8125 35.625 42.0625 35.5C43.3125 35.125 44.0625 33.75 43.6875 32.375Z" fill="black"/>
+                        </svg>                                              
+                </div>
+                <h2 class="mb-4 text-2xl font-bold leading-tight dark:text-gray-300 prime-text ">
+                    Individual or Group</h2>
+                <p class="text-sm font-medium text-gray-500  dark:text-gray-400 ">
+                    Counseling and support, just as well as maternity and paternity classes are vital in order for parents .</p>
+            </div>
+        </a>
+        <a href="#" class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3 ">
+            <div class="h-full p-6 text-center border border-gray-200 dark:border-gray-600 rounded-md ">
+                <div class="inline-flex items-center justify-center w-16 h-16 mx-auto mb-4 text-blue-500 rounded-lg  dark:text-gray-400 ">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_168_1177)">
+                        <path d="M35.625 52.5H24.375C23.3808 52.4989 22.4276 52.1034 21.7246 51.4004C21.0216 50.6974 20.6261 49.7442 20.625 48.75V39.375H11.25C10.2558 39.3739 9.30262 38.9784 8.59961 38.2754C7.8966 37.5724 7.50114 36.6192 7.5 35.625V24.375C7.50099 23.3807 7.8964 22.4275 8.59945 21.7244C9.30249 21.0214 10.2557 20.626 11.25 20.625H20.625V11.25C20.626 10.2557 21.0214 9.30249 21.7244 8.59945C22.4275 7.8964 23.3807 7.50099 24.375 7.5H35.625C36.6192 7.50114 37.5724 7.8966 38.2754 8.59961C38.9784 9.30262 39.3739 10.2558 39.375 11.25V20.625H48.75C49.7442 20.6261 50.6974 21.0216 51.4004 21.7246C52.1034 22.4276 52.4989 23.3808 52.5 24.375V35.625C52.4987 36.6192 52.1031 37.5722 51.4002 38.2752C50.6972 38.9781 49.7442 39.3737 48.75 39.375H39.375V48.75C39.3737 49.7442 38.9781 50.6972 38.2752 51.4002C37.5722 52.1031 36.6192 52.4987 35.625 52.5ZM11.25 24.375V35.625H24.375V48.75H35.625V35.625H48.75V24.375H35.625V11.25H24.375V24.375H11.25Z" fill="black"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_168_1177">
+                        <rect width="60" height="60" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>       
+                </div>
+                <h2 class="mb-4 text-2xl font-bold leading-tight dark:text-gray-300 prime-text ">
+                    Health & Mind</h2>
+                <p class="text-sm font-medium text-gray-500  dark:text-gray-400 ">
+                    Here, at our medical clinic we’ll be taking good care of both your psychological and medical wellbeing.</p>
+            </div>
+        </a>
+    </div>
+    </div>
+    </section>
+    <section class="py-8 bg-gray-900 border-t border-gray-200 ">
+        <div class="max-w-6xl px-4 mx-auto ">
+            <div class="flex flex-wrap py-8 -mx-3">
+                <div class="w-full px-4 mb-11 md:w-1/2 lg:w-4/12 lg:mb-0">
+                    <a href="index.html" class="mr-4 text-gray-300 text-lg font-semibold">
+                        <!-- <div class="h-[2rem] w-[14rem] md:h-[3.5rem]">
+                            <img src="assets/images/logo.png" alt="logo" class="object-cover w-full h-full">
+                        </div> -->Hajardin
+                    </a>
+                    <p class="mt-4 text-base font-normal leading-6 text-gray-400 lg:w-64 ">
+                        Pregnancy journey from first  to last week</p>
+                </div>
+                <div class="w-full px-4 md:w-1/4 lg:w-2/12 mb-11 lg:mb-0">
+                    <h2 class="mb-4 text-xl font-bold text-gray-300 ">Recent posts </h2>
+                    <ul>
+                        <li class="flex items-center mb-4 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-gray-500  bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                </path>
+                            </svg>
+                            <a href="#" class="inline-block text-base font-normal text-gray-400 ">Home</a>
+                        </li>
+                        <li class="flex items-center mb-4 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-gray-400  bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                </path>
+                            </svg>
+                            <a href="#" class="inline-block text-base font-normal text-gray-400 ">About
+                                Us</a>
+                        </li>
+                        <li class="flex items-center mb-4 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-gray-400  bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                </path>
+                            </svg>
+                            <a href="#" class="inline-block text-base font-normal text-gray-400 ">Services</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full px-4 md:w-1/4 lg:w-2/12 mb-11 lg:mb-0">
+                    <h2 class="mb-4 text-xl font-bold text-gray-300 ">Recent posts</h2>
+                    <ul>
+                        <li class="flex items-center mb-4 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-gray-400  bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                </path>
+                            </svg>
+                            <a href="#" class="inline-block text-base font-normal text-gray-400 ">Home</a>
+                        </li>
+                        <li class="flex items-center mb-4 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-gray-400  bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                </path>
+                            </svg>
+                            <a href="#" class="inline-block text-base font-normal text-gray-400 ">About
+                                Us</a>
+                        </li>
+                        <li class="flex items-center mb-4 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-gray-400  bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                </path>
+                            </svg>
+                            <a href="#" class="inline-block text-base font-normal text-gray-400 ">Services</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full px-4 mb-2 lg:mb-0 md:w-1/3 lg:w-4/12">
+                    <h2 class="mb-4 text-lg font-bold text-gray-300 ">Recent posts</h2>
+                    <p class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-1 text-gray-400  bi bi-geo-alt " viewBox="0 0 16 16">
+                            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z">
+                            </path>
+                            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                        </svg>
+                        <span class="text-gray-400 ">Kathmandu, Nepal</span>
+                    </p>
+                    <p class="flex items-center mb-4 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-2 text-gray-400  bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z">
+                            </path>
+                        </svg>
+                        <span class="text-gray-400 ">info@gmail.com</span>
+                    </p>
+                    <p class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-2 text-gray-400  bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z">
+                            </path>
+                        </svg>
+                        <span class="text-gray-400 ">+977-9836736352</span>
+                    </p>
+                </div>
+            </div>
+            <div class="pt-6 text-center text-gray-300 border-t border-gray-700">
+                <span>© Copyright 2024 . All Rights Reserved</span>
+            </div>
+        </div>
+    </section>
+    </body>
+    </html>
